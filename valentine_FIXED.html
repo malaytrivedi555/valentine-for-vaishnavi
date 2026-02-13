@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Vaishnavi 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+* { 
+  box-sizing: border-box; 
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-pink: #ff6b9d;
+  --secondary-pink: #c44569;
+  --light-pink: #f093fb;
+  --purple: #764ba2;
+  --gold: #feca57;
+  --text-white: #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #feca57 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  overflow-x: hidden;
+  position: relative;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Video Background */
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.video-background::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, transparent 20%, rgba(0,0,0,0.5) 100%);
+}
+
+/* Music Player */
+.music-player {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 15px 25px;
+  border-radius: 50px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.music-player:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 50px rgba(0,0,0,0.4);
+}
+
+.music-toggle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-pink), var(--secondary-pink));
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(255, 107, 157, 0.4);
+}
+
+.music-toggle:hover {
+  transform: rotate(15deg) scale(1.1);
+}
+
+.music-toggle.playing {
+  animation: musicPulse 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes musicPulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+.music-info {
+  color: var(--secondary-pink);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Particle Canvas */
+#particles-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.page {
+  display: none;
+  min-height: 100vh;
+  width: 100vw;
+  padding: 50px 30px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  animation: pageEnter 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  position: relative;
+  z-index: 2;
+  overflow-y: auto;
+}
+
+.page.active {
+  display: flex;
+}
+
+@keyframes pageEnter {
+  from { 
+    opacity: 0; 
+    transform: scale(0.8) translateY(50px);
+  }
+  to { 
+    opacity: 1; 
+    transform: scale(1) translateY(0);
+  }
+}
+
+h1, h2 {
+  color: var(--text-white);
+  margin-bottom: 20px;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-family: 'Playfair Display', serif;
+}
+
+h1 {
+  font-size: 3.5em;
+  background: linear-gradient(45deg, #ff6b9d, #feca57, #ff6b9d);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientText 3s ease infinite, textFloat 3s ease-in-out infinite;
+}
+
+h2 {
+  font-size: 2.5em;
+}
+
+.cursive {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.2em;
+}
+
+@keyframes gradientText {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes textFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+p {
+  color: var(--text-white);
+  font-size: 1.2em;
+  margin: 15px 0;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  max-width: 700px;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+button {
+  padding: 16px 40px;
+  margin: 15px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(135deg, var(--primary-pink), var(--secondary-pink));
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  box-shadow: 0 10px 30px rgba(255, 107, 157, 0.4);
+  position: relative;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+button:hover {
+  transform: scale(1.1) translateY(-5px);
+  box-shadow: 0 15px 40px rgba(255, 107, 157, 0.6);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.no-btn {
+  position: absolute;
+  background: linear-gradient(135deg, #95a5a6, #7f8c8d);
+  transition: all 0.2s ease;
+}
+
+.hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.hearts span {
+  position: absolute;
+  bottom: -50px;
+  font-size: 30px;
+  animation: floatHeart 7s infinite;
+  filter: drop-shadow(0 0 10px rgba(255, 111, 145, 0.8));
+}
+
+@keyframes floatHeart {
+  0% { 
+    transform: translateY(0) rotate(0deg); 
+    opacity: 0; 
+  }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { 
+    transform: translateY(-120vh) rotate(360deg); 
+    opacity: 0; 
+  }
+}
+
+/* Photo Gallery */
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+.photo-item {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+  transition: all 0.4s ease;
+  cursor: pointer;
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, var(--light-pink), var(--purple));
+}
+
+.photo-item:hover {
+  transform: scale(1.05) rotate(2deg);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  z-index: 10;
+}
+
+.photo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.4s ease;
+}
+
+.photo-item:hover img {
+  transform: scale(1.1);
+}
+
+.photo-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: white;
+  padding: 20px;
+  transform: translateY(100%);
+  transition: all 0.4s ease;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.photo-item:hover .photo-caption {
+  transform: translateY(0);
+}
+
+/* Photo Slideshow */
+.slideshow-container {
+  max-width: 800px;
+  position: relative;
+  margin: 30px auto;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  background: white;
+}
+
+.slide {
+  display: none;
+  position: relative;
+  animation: slideIn 0.5s ease;
+}
+
+.slide.active-slide {
+  display: block;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.slide img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.slide-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+  color: white;
+  padding: 30px;
+  font-size: 18px;
+  font-family: 'Dancing Script', cursive;
+}
+
+.slide-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.9);
+  color: var(--secondary-pink);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.slide-nav:hover {
+  background: white;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.slide-nav.prev { left: 20px; }
+.slide-nav.next { right: 20px; }
+
+/* Timeline */
+.timeline {
+  max-width: 900px;
+  margin: 40px auto;
+  position: relative;
+  padding: 20px 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(to bottom, var(--primary-pink), var(--gold));
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  margin: 40px 0;
+  position: relative;
+  width: 100%;
+}
+
+.timeline-content {
+  background: rgba(255,255,255,0.95);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  width: 45%;
+  position: relative;
+  animation: fadeInUp 0.6s ease;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+  margin-left: auto;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+  margin-right: auto;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.timeline-date {
+  font-weight: 700;
+  color: var(--primary-pink);
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.timeline-text {
+  color: #333;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background: var(--gold);
+  border: 4px solid white;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(254, 202, 87, 0.8);
+  z-index: 10;
+}
+
+/* Coupon Book */
+.coupon {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  margin-top: 20px;
+  min-width: 350px;
+  max-width: 500px;
+  font-size: 1.4em;
+  color: var(--primary-pink);
+  font-weight: 600;
+  animation: couponPulse 2s ease-in-out infinite;
+  border: 4px dashed var(--primary-pink);
+  position: relative;
+  overflow: hidden;
+}
+
+.coupon::before {
+  content: '✂️';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  animation: scissorSnip 2s ease-in-out infinite;
+}
+
+@keyframes scissorSnip {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(15deg); }
+}
+
+@keyframes couponPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+/* Gift boxes */
+.gift-container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.gift-box {
+  width: 140px;
+  height: 140px;
+  background: linear-gradient(135deg, var(--light-pink), var(--secondary-pink));
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4em;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+  animation: giftBounce 2s ease-in-out infinite;
+  position: relative;
+}
+
+.gift-box::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: linear-gradient(45deg, var(--primary-pink), var(--gold), var(--light-pink));
+  border-radius: 20px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.gift-box:hover::after {
+  opacity: 1;
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  100% { transform: rotate(360deg); }
+}
+
+.gift-box:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.gift-box:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes giftBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.gift-box:hover {
+  transform: scale(1.2) rotate(5deg);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+
+/* Photo frame */
+.photo-frame {
+  width: 320px;
+  height: 320px;
+  border: 12px solid white;
+  border-radius: 20px;
+  box-shadow: 0 25px 70px rgba(0,0,0,0.4);
+  background: linear-gradient(135deg, var(--primary-pink), var(--secondary-pink));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5em;
+  margin: 30px auto;
+  animation: frameFloat 4s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes frameFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(2deg); }
+}
+
+/* Beating heart */
+.beating-heart {
+  font-size: 6em;
+  animation: heartBeat 1.5s ease-in-out infinite;
+  display: inline-block;
+  margin: 20px;
+  filter: drop-shadow(0 0 20px rgba(255, 107, 157, 0.8));
+}
+
+@keyframes heartBeat {
+  0%, 100% { transform: scale(1); }
+  10%, 30% { transform: scale(0.9); }
+  20%, 40% { transform: scale(1.2); }
+}
+
+/* Message Card */
+.message-card {
+  background: rgba(255,255,255,0.95);
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  max-width: 600px;
+  margin: 30px auto;
+  color: #333;
+  font-size: 1.1em;
+  line-height: 1.8;
+  font-style: italic;
+  border-left: 6px solid var(--primary-pink);
+  animation: cardSlideIn 0.8s ease;
+}
+
+@keyframes cardSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Confetti */
+.confetti {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: #f0f;
+  top: -10px;
+  z-index: 4;
+  animation: confettiFall 3s linear forwards;
+}
+
+@keyframes confettiFall {
+  to {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Pulse rings */
+.pulse-ring {
+  position: absolute;
+  border: 3px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  animation: pulseRing 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+@keyframes pulseRing {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    width: 400px;
+    height: 400px;
+    opacity: 0;
+  }
+}
+
+/* Scroll hint */
+.scroll-hint {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s infinite;
+  color: white;
+  font-size: 2em;
+  opacity: 0.7;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-15px); }
+}
+
+/* Lightbox for photos */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.95);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 15px;
+  box-shadow: 0 0 50px rgba(255,255,255,0.3);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+  background: rgba(255,255,255,0.2);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.lightbox-close:hover {
+  background: rgba(255,255,255,0.3);
+  transform: rotate(90deg);
+}
+
+/* Loading Animation */
+.loader {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--purple), var(--primary-pink));
+  z-index: 10000;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.loader.active {
+  display: flex;
+}
+
+.loader-heart {
+  font-size: 100px;
+  animation: heartBeat 1s ease-in-out infinite;
+}
+
+.loader-text {
+  color: white;
+  font-size: 24px;
+  margin-top: 20px;
+  font-family: 'Dancing Script', cursive;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 { font-size: 2.5em; }
+  h2 { font-size: 2em; }
+  p { font-size: 1em; }
+  button { padding: 12px 30px; font-size: 16px; }
+  
+  .gift-box { width: 100px; height: 100px; font-size: 3em; }
+  .photo-frame { width: 250px; height: 250px; font-size: 4em; }
+  .beating-heart { font-size: 4em; }
+  
+  .timeline::before { left: 20px; }
+  .timeline-content { width: calc(100% - 80px); margin-left: 60px !important; }
+  .timeline-dot { left: 20px; }
+  
+  .photo-gallery { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; }
+  
+  .slide img { height: 300px; }
+  .slide-nav { width: 40px; height: 40px; font-size: 20px; }
+  
+  .music-player {
+    bottom: 10px;
+    right: 10px;
+    padding: 10px 15px;
+  }
+  
+  .music-toggle { width: 40px; height: 40px; font-size: 16px; }
+  .music-info { font-size: 12px; }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--primary-pink), var(--gold));
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(var(--gold), var(--primary-pink));
+}
+</style>
+</head>
+<body>
+
+<!-- Loading Screen -->
+<div class="loader active" id="loader">
+  <div class="loader-heart">💖</div>
+  <div class="loader-text">Loading something special for you...</div>
+</div>
+
+<!-- Video Background -->
+<div class="video-background">
+  <canvas id="particles-canvas"></canvas>
+</div>
+
+<!-- Music Player -->
+<div class="music-player">
+  <button class="music-toggle" id="musicToggle">🎵</button>
+  <div class="music-info" id="musicInfo">Click to play music</div>
+</div>
+
+<!-- Hidden Audio Element -->
+<audio id="bgMusic" loop>
+  <!-- Replace this URL with your own music file or a YouTube-to-MP3 link -->
+  <source src="music/song.mp3" type="audio/mpeg">
+</audio>
+
+<!-- FLOATING HEARTS -->
+<div class="hearts"></div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" onclick="closeLightbox()">×</span>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<!-- PAGE 1: Welcome -->
+<div class="page active" id="p1">
+  <div class="beating-heart">💖</div>
+  <h1 class="cursive">Hey Vaishnavi 💗</h1>
+  <p>I made something just for you…</p>
+  <p style="font-size: 0.9em; margin-top: 10px;">Something that comes straight from my heart</p>
+  <p style="font-size: 0.85em; opacity: 0.9;">Get ready for a journey through our love story...</p>
+  <button onclick="go('p2')">Let's Begin 💕</button>
+  <div class="scroll-hint">↓</div>
+</div>
+
+<!-- PAGE 2: The Question -->
+<div class="page" id="p2">
+  <h1>Will you be my Valentine? 💖</h1>
+  <p>This is the most important question I'll ask today...</p>
+  <p style="font-size: 0.9em;">Because you mean the world to me 🌍</p>
+  <button onclick="yesClicked()">YES! 💞</button>
+  <button class="no-btn" id="noBtn">NO 😤</button>
+</div>
+
+<!-- PAGE 3: Photo Gallery -->
+<div class="page" id="p3">
+  <h2>Our Beautiful Moments Together 📸</h2>
+  <p>Every picture tells a story of us...</p>
+  
+  <div class="photo-gallery">
+    <!-- Photo 1 - Replace src with your actual image URL -->
+    <div class="photo-item" onclick="openLightbox('images/our_first_date.jpg')">
+      <img src="images/our_first_date.jpg" alt="The First Bond">
+      <div class="photo-caption">Our first meeting 💑</div>
+    </div>
+    
+    <!-- Photo 2 -->
+    <div class="photo-item" onclick="openLightbox('images/kachnar.jpg')">
+      <img src="images/kachnar.jpg" alt="Real Love">
+      <div class="photo-caption">Our first actual date 😄</div>
+    </div>
+    
+    <!-- Photo 3 -->
+    <div class="photo-item" onclick="openLightbox('images/goel.jpg')">
+      <img src="images/goel.jpg" alt="Aankhon Me Teri">
+      <div class="photo-caption">When you looked at me like that 😍</div>
+    </div>
+    
+    <!-- Photo 4 -->
+    <div class="photo-item" onclick="openLightbox('images/bday.jpg')">
+      <img src="images/bday.jpg" alt="Forever Grateful">
+      <div class="photo-caption">Perfect surprise, perfect you 🌅</div>
+    </div>
+    
+    <!-- Photo 5 -->
+    <div class="photo-item" onclick="openLightbox('images/surprise.jpg')">
+      <img src="images/surprise.jpg" alt="Saat Samandar Paar">
+      <div class="photo-caption">When you made us forever 💕</div>
+    </div>
+    
+    <!-- Photo 6 -->
+    <div class="photo-item" onclick="openLightbox('images/brh.jpg')">
+      <img src="images/brh.jpg" alt="Mine Mine Mine">
+      <div class="photo-caption">You & me against the world 🌎</div>
+    </div>
+  </div>
+  
+  <button onclick="go('p4')" style="margin-top: 30px;">Continue Our Journey 💝</button>
+</div>
+
+<!-- PAGE 4: Timeline -->
+<div class="page" id="p4">
+  <h2>Our Love Story Timeline 💕</h2>
+  <p>Every moment with you is worth remembering...</p>
+  
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-date">📅 First Meeting</div>
+        <div class="timeline-text">The day our eyes first met, and I knew my life would never be the same. You walked in and everything just... clicked. ✨</div>
+      </div>
+    </div>
+    
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-date">💬 First Conversation</div>
+        <div class="timeline-text">We talked for hours and it felt like minutes. Your laugh became my favorite sound, your smile my favorite sight. 😊</div>
+      </div>
+    </div>
+    
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-date">🌟 First Date</div>
+        <div class="timeline-text">Nervous and excited, we spent the whole evening lost in conversation. I didn't want it to end. Neither did you. 🥰</div>
+      </div>
+    </div>
+    
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-date">❤️ When I Knew</div>
+        <div class="timeline-text">The moment I realized you weren't just someone I liked - you were someone I couldn't imagine my life without. 💖</div>
+      </div>
+    </div>
+    
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-date">💑 Today</div>
+        <div class="timeline-text">Here we are, creating more beautiful memories together. And this is just the beginning of our forever... 💕</div>
+      </div>
+    </div>
+  </div>
+  
+  <button onclick="go('p5')">Keep Going 💗</button>
+</div>
+
+<!-- PAGE 5: Photo Slideshow -->
+<div class="page" id="p5">
+  <h2>Let Me Show You Something Special 🎬</h2>
+  <p>Our story in pictures...</p>
+  
+  <div class="slideshow-container">
+    <div class="slide active-slide">
+      <img src="images/kiss.jpg" alt="Slide 1">
+      <div class="slide-caption">Remember this beautiful day? 💕</div>
+    </div>
+    
+    <div class="slide">
+      <img src="images/love.jpg" alt="Slide 2">
+      <div class="slide-caption">Your smile makes everything better ✨</div>
+    </div>
+    
+    <div class="slide">
+      <img src="images/laugh.jpg" alt="Slide 3">
+      <div class="slide-caption">Every moment with you is a treasure 💎</div>
+    </div>
+    
+    <div class="slide">
+      <img src="images/kachnar2.jpg" alt="Slide 4">
+      <div class="slide-caption">Us against the world, always 🌍</div>
+    </div>
+    
+    <div class="slide">
+      <img src="images/sundar.jpg" alt="Slide 5">
+      <div class="slide-caption">I love you more every single day 💗</div>
+    </div>
+    
+    <button class="slide-nav prev" onclick="changeSlide(-1)">‹</button>
+    <button class="slide-nav next" onclick="changeSlide(1)">›</button>
+  </div>
+  
+  <button onclick="go('p6')" style="margin-top: 30px;">Next 💝</button>
+</div>
+
+<!-- PAGE 6: Gifts -->
+<div class="page" id="p6">
+  <h2>I Got You Something 🎁</h2>
+  <p>Pick any gift you want (they're all special, just like you)</p>
+  <p style="font-size: 0.9em; opacity: 0.9;">Don't worry, they all lead to the same amazing surprise! 😉</p>
+  
+  <div class="gift-container">
+    <div class="gift-box" onclick="go('p7')">🎁</div>
+    <div class="gift-box" onclick="go('p7')">🎀</div>
+    <div class="gift-box" onclick="go('p7')">💝</div>
+  </div>
+</div>
+
+<!-- PAGE 7: Love Coupons -->
+<div class="page" id="p7">
+  <h2>Love Coupons Just For You 💝</h2>
+  <p>These are yours to redeem anytime, anywhere ✨</p>
+  <p style="font-size: 0.9em;">No expiration date, unlimited redemptions! 😊</p>
+  
+  <div class="coupon" id="couponText"></div>
+  
+  <button onclick="nextCoupon()">Show Me Another ➡️</button>
+  <button onclick="go('p8')">Continue 💗</button>
+</div>
+
+<!-- PAGE 8: Special Message -->
+<div class="page" id="p8">
+  <h2>A Message From My Heart 💌</h2>
+  
+  <div class="message-card">
+    Dear Vaishnavi,
+    <br><br>
+    From the moment you came into my life, everything changed. You brought color to my gray days, warmth to my cold nights, and joy to my every moment.
+    <br><br>
+    Your laugh is my favorite melody, your smile my favorite view, and your happiness my greatest goal. I promise to always be there for you, to support your dreams, to celebrate your victories, and to comfort you in difficult times.
+    <br><br>
+    You are my best friend, my partner, my love. With you, every day feels like Valentine's Day.
+    <br><br>
+    Thank you for choosing me, for loving me, for being you.
+    <br><br>
+    Forever yours 💕
+  </div>
+  
+  <button onclick="go('p9')">There's More 💗</button>
+</div>
+
+<!-- PAGE 9: Photo Frame -->
+<div class="page" id="p9">
+  <h2>You & Me 💑</h2>
+  <p>Together, we're unstoppable</p>
+  
+  <div class="photo-frame">
+    <!-- Replace with your couple photo -->
+    <img src="images/angry.jpg" alt="Us Together">
+  </div>
+  
+  <p class="cursive" style="font-size: 1.3em; margin-top: 20px;">
+    "In a sea of people, my eyes will always search for you"
+  </p>
+  
+  <button onclick="go('p10')">One Last Thing 💕</button>
+</div>
+
+<!-- PAGE 10: Final Page -->
+<div class="page" id="p10">
+  <h1>Happy Valentine's Day, Vaishnavi 💖</h1>
+  <div class="beating-heart">❤️</div>
+  
+  <p style="font-size: 1.4em; margin-top: 20px;">You make my world softer, warmer, and brighter.</p>
+  <p style="font-size: 1.2em;">Thank you for being you, for being mine, for being everything I ever wanted.</p>
+  <p style="margin-top: 30px; font-size: 1.3em; font-weight: 600;">I love you more than words can say 💕</p>
+  
+  <div class="cursive" style="font-size: 1.5em; margin-top: 40px; opacity: 0.9;">
+    "Forever isn't long enough with you..."
+  </div>
+  
+  <button onclick="restartJourney()" style="margin-top: 40px;">Relive Our Journey 🔄</button>
+</div>
+
+<script>
+// ===== PAGE NAVIGATION =====
+function go(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  
+  // Trigger effects on certain pages
+  if (id === 'p3' || id === 'p6' || id === 'p10') {
+    createConfetti();
+  }
+  
+  if (id === 'p10') {
+    createPulseRings();
+    createSparkles(30);
+  }
+}
+
+function restartJourney() {
+  go('p1');
+  createSparkles(20);
+}
+
+// ===== LOADING SCREEN =====
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('loader').classList.remove('active');
+  }, 2000);
+});
+
+// ===== MUSIC PLAYER =====
+const musicToggle = document.getElementById('musicToggle');
+const bgMusic = document.getElementById('bgMusic');
+const musicInfo = document.getElementById('musicInfo');
+let isPlaying = false;
+
+// Try to autoplay when page loads (after user interaction)
+function tryAutoPlay() {
+  bgMusic.play()
+    .then(() => {
+      isPlaying = true;
+      musicToggle.textContent = '🎶';
+      musicInfo.textContent = 'Now playing...';
+      musicToggle.classList.add('playing');
+    })
+    .catch((error) => {
+      // Autoplay blocked by browser
+      console.log('Autoplay blocked. User needs to click play.');
+      musicInfo.textContent = 'Click to play music';
+    });
+}
+
+// Try to play after loading screen disappears
+setTimeout(() => {
+  tryAutoPlay();
+}, 2500);
+
+musicToggle.addEventListener('click', () => {
+  if (isPlaying) {
+    bgMusic.pause();
+    musicToggle.textContent = '🎵';
+    musicInfo.textContent = 'Click to play music';
+    musicToggle.classList.remove('playing');
+    isPlaying = false;
+  } else {
+    bgMusic.play()
+      .then(() => {
+        musicToggle.textContent = '🎶';
+        musicInfo.textContent = 'Now playing...';
+        musicToggle.classList.add('playing');
+        isPlaying = true;
+      })
+      .catch((error) => {
+        musicInfo.textContent = 'Error: Check music file';
+        console.error('Music play error:', error);
+      });
+  }
+});
+
+// Also try to play on first user click anywhere on page
+let firstClick = true;
+document.addEventListener('click', () => {
+  if (firstClick && !isPlaying) {
+    firstClick = false;
+    tryAutoPlay();
+  }
+}, { once: true });
+
+// ===== "NO" BUTTON ESCAPE =====
+const noBtn = document.getElementById('noBtn');
+let noBtnClicks = 0;
+
+noBtn.addEventListener('mouseover', () => {
+  const maxX = window.innerWidth - noBtn.offsetWidth - 20;
+  const maxY = window.innerHeight - noBtn.offsetHeight - 20;
+  noBtn.style.left = Math.max(20, Math.random() * maxX) + 'px';
+  noBtn.style.top = Math.max(20, Math.random() * maxY) + 'px';
+});
+
+noBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  noBtnClicks++;
+  if (noBtnClicks === 1) {
+    noBtn.textContent = "Are you sure? 🥺";
+  } else if (noBtnClicks === 2) {
+    noBtn.textContent = "Really? 😢";
+    noBtn.style.fontSize = '14px';
+  } else if (noBtnClicks >= 3) {
+    noBtn.textContent = "Please? 💔";
+    noBtn.style.fontSize = '12px';
+  }
+});
+
+// ===== YES BUTTON =====
+function yesClicked() {
+  createConfetti();
+  createSparkles(25);
+  setTimeout(() => go('p3'), 1000);
+}
+
+// ===== LOVE COUPONS =====
+const coupons = [
+  "🎬 Movie Night — your choice, my treat, endless popcorn",
+  "🤗 Unlimited Hugs — redeemable 24/7, no questions asked",
+  "🍰 Sweet Treat Date — ice cream, cake, chocolate, your call",
+  "🌙 Late Night Talks — about dreams, fears, and forever",
+  "💌 Random Surprises — just because you deserve them",
+  "☕ Coffee Date — your favorite spot, my favorite person",
+  "🎵 Custom Playlist — songs that remind me of you",
+  "🍕 Dinner Cooked By Me — I'll try my absolute best!",
+  "📸 Photo Shoot — capturing our beautiful moments",
+  "🎨 Creative Date — painting, crafting, creating together"
+];
+
+let couponIndex = 0;
+
+function nextCoupon() {
+  const couponDiv = document.getElementById('couponText');
+  couponDiv.style.animation = 'none';
+  setTimeout(() => {
+    couponDiv.innerText = coupons[couponIndex];
+    couponDiv.style.animation = 'couponPulse 2s ease-in-out infinite';
+    couponIndex = (couponIndex + 1) % coupons.length;
+  }, 100);
+}
+
+nextCoupon();
+
+// ===== PHOTO SLIDESHOW =====
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function changeSlide(direction) {
+  slides[currentSlide].classList.remove('active-slide');
+  currentSlide = (currentSlide + direction + slides.length) % slides.length;
+  slides[currentSlide].classList.add('active-slide');
+}
+
+// Auto-advance slideshow
+setInterval(() => {
+  if (document.getElementById('p5').classList.contains('active')) {
+    changeSlide(1);
+  }
+}, 4000);
+
+// ===== LIGHTBOX =====
+function openLightbox(src) {
+  document.getElementById('lightbox').classList.add('active');
+  document.getElementById('lightboxImg').src = src;
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+}
+
+// Close lightbox on background click
+document.getElementById('lightbox').addEventListener('click', (e) => {
+  if (e.target.id === 'lightbox') {
+    closeLightbox();
+  }
+});
+
+// ===== FLOATING HEARTS =====
+function createHearts() {
+  const heart = document.createElement('span');
+  const hearts = ['💗', '💖', '💕', '💓', '💝', '❤️', '💘', '💞'];
+  heart.innerText = hearts[Math.floor(Math.random() * hearts.length)];
+  heart.style.left = Math.random() * 100 + 'vw';
+  heart.style.fontSize = (Math.random() * 20 + 20) + 'px';
+  heart.style.animationDuration = (Math.random() * 3 + 5) + 's';
+  heart.style.animationDelay = Math.random() * 2 + 's';
+  document.querySelector('.hearts').appendChild(heart);
+  setTimeout(() => heart.remove(), 9000);
+}
+
+setInterval(createHearts, 250);
+
+// ===== CONFETTI =====
+function createConfetti() {
+  const colors = ['#ff6b9d', '#c44569', '#f093fb', '#f5576c', '#feca57', '#48dbfb', '#ee5a6f', '#f368e0'];
+  for (let i = 0; i < 80; i++) {
+    setTimeout(() => {
+      const confetti = document.createElement('div');
+      confetti.className = 'confetti';
+      confetti.style.left = Math.random() * 100 + 'vw';
+      confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+      confetti.style.animationDelay = Math.random() * 0.5 + 's';
+      confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+      document.body.appendChild(confetti);
+      setTimeout(() => confetti.remove(), 3000);
+    }, i * 20);
+  }
+}
+
+// ===== SPARKLES =====
+function createSparkles(count) {
+  for (let i = 0; i < count; i++) {
+    setTimeout(() => {
+      const sparkle = document.createElement('div');
+      sparkle.style.position = 'fixed';
+      sparkle.style.width = '6px';
+      sparkle.style.height = '6px';
+      sparkle.style.background = 'white';
+      sparkle.style.borderRadius = '50%';
+      sparkle.style.left = Math.random() * 100 + 'vw';
+      sparkle.style.top = Math.random() * 100 + 'vh';
+      sparkle.style.pointerEvents = 'none';
+      sparkle.style.zIndex = '100';
+      sparkle.style.animation = 'sparkleAnim 1s ease-out forwards';
+      sparkle.style.boxShadow = '0 0 10px white';
+      document.body.appendChild(sparkle);
+      setTimeout(() => sparkle.remove(), 1000);
+    }, i * 40);
+  }
+}
+
+// Sparkle animation keyframes
+const sparkleStyle = document.createElement('style');
+sparkleStyle.textContent = `
+  @keyframes sparkleAnim {
+    0% { transform: scale(0) rotate(0deg); opacity: 1; }
+    100% { transform: scale(2) rotate(180deg); opacity: 0; }
+  }
+`;
+document.head.appendChild(sparkleStyle);
+
+// ===== PULSE RINGS =====
+function createPulseRings() {
+  for (let i = 0; i < 5; i++) {
+    setTimeout(() => {
+      const ring = document.createElement('div');
+      ring.className = 'pulse-ring';
+      ring.style.left = '50%';
+      ring.style.top = '50%';
+      ring.style.transform = 'translate(-50%, -50%)';
+      const activePage = document.querySelector('.page.active');
+      if (activePage) {
+        activePage.appendChild(ring);
+        setTimeout(() => ring.remove(), 2000);
+      }
+    }, i * 400);
+  }
+}
+
+// ===== PARTICLE CANVAS =====
+const canvas = document.getElementById('particles-canvas');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const particles = [];
+const particleCount = 60;
+
+class Particle {
+  constructor() {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+    this.size = Math.random() * 3 + 1;
+    this.speedX = Math.random() * 1 - 0.5;
+    this.speedY = Math.random() * 1 - 0.5;
+    this.opacity = Math.random() * 0.5 + 0.2;
+  }
+  
+  update() {
+    this.x += this.speedX;
+    this.y += this.speedY;
+    
+    if (this.x > canvas.width) this.x = 0;
+    if (this.x < 0) this.x = canvas.width;
+    if (this.y > canvas.height) this.y = 0;
+    if (this.y < 0) this.y = canvas.height;
+  }
+  
+  draw() {
+    ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fill();
+  }
+}
+
+function initParticles() {
+  for (let i = 0; i < particleCount; i++) {
+    particles.push(new Particle());
+  }
+}
+
+function animateParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles.forEach(particle => {
+    particle.update();
+    particle.draw();
+  });
+  requestAnimationFrame(animateParticles);
+}
+
+initParticles();
+animateParticles();
+
+// ===== RESIZE HANDLER =====
+window.addEventListener('resize', () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+
+// ===== CURSOR SPARKLE TRAIL =====
+document.addEventListener('mousemove', (e) => {
+  if (Math.random() > 0.85) {
+    const sparkle = document.createElement('div');
+    sparkle.style.position = 'fixed';
+    sparkle.style.width = '4px';
+    sparkle.style.height = '4px';
+    sparkle.style.background = 'white';
+    sparkle.style.borderRadius = '50%';
+    sparkle.style.left = e.clientX + 'px';
+    sparkle.style.top = e.clientY + 'px';
+    sparkle.style.pointerEvents = 'none';
+    sparkle.style.zIndex = '100';
+    sparkle.style.animation = 'sparkleAnim 0.8s ease-out forwards';
+    sparkle.style.boxShadow = '0 0 8px white';
+    document.body.appendChild(sparkle);
+    setTimeout(() => sparkle.remove(), 800);
+  }
+});
+
+// ===== INITIAL EFFECTS =====
+setTimeout(() => {
+  createSparkles(20);
+}, 2500);
+</script>
+
+</body>
+</html>
